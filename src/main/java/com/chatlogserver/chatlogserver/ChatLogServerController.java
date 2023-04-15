@@ -9,9 +9,6 @@ import java.util.*;
 public class ChatLogServerController {
 
     private static Map<String, List<Message>> chatLogs = new HashMap<>();
-    Comparator<Message> comparator = ((o1, o2) -> Long.compare(o2.getTimestamp(), o1.getTimestamp()));
-
-
 
     @PostMapping("/chatlogs/{user}")
     public String createChatLogEntry(@PathVariable String user, @RequestBody Message message) {
